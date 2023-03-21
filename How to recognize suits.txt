@@ -1,0 +1,23 @@
+This is the second part of the test assignment.
+
+My goal is to figure out how to recognize the suits of regular playing cards using a camera.
+
+While I don't have any experience with it, luckily I do have a good idea, as I have seen something similar done on YouTube by the channel Stuff Made Here, who created a robot that can solve a giant "white only" jigsaw puzzle using a camera.
+https://www.youtube.com/watch?v=WsPHBD5NsS0
+
+The first step is to recognize rectangular shapes with pictures on top as cards.
+
+Assuming the card isn't perfectly aligned, aka it's at a slight angle, we first use some program that can rotate the image so that we have a perfect rectangle that is higher than it is wide.
+
+The second step would be to figure out how to recognize the suit. For that, we first reduce the image into black and white, and then we use another algorithm that creates the contours of the image by reducing the grays more more towards either the white or black spectrum based on the pixel saturation value, and then we eventually have all the contours. We keep that data in some form for comparison in the next step.
+
+After that, there's only really one way to continue, and the best way to do so would be to look for the corners of the card (specifically top left, or bottom right if the first one is covered), and use the contours data to figure out what letter and suit is written there (bottom right corner would have to be rotated 180 degrees for proper comparison).
+
+The possible values are 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K, A.
+The possible suits are heart, diamond, spade, club.
+
+There would be a second way to do it by counting the big suits in the center or recognizing the picture of Jack, Queen and King cards, but because card faces can vary a lot and pattern recognition is much more complex and slow, this would not be a very effective method.
+
+And, well, that's about it. After you gain the info about the suit and letter/number, you're done. As for what programs and technologies to use exactly, I'm not experienced enough on that field to give an exact answer, but I'm sure there's various programs and codes out there that can already do this, one would just have to look.
+
+I believe my explanation should be sufficient for this for now.
